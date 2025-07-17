@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+}
+
+.topButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+#Rock {
+    background:url(/home/celestialtwig/Repos/rock-paper-scissors/rock.png) no-repeat;
+    cursor: pointer;    
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-size: contain;
+    border: none;
+}
+
+#Paper {
+    background:url(/home/celestialtwig/Repos/rock-paper-scissors/paper.png) no-repeat;
+    cursor: pointer;    
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-size: contain;
+    border: none;
+}
+
+#Scissors {
+    background:url(/home/celestialtwig/Repos/rock-paper-scissors/hand-scissors.png) no-repeat;
+    cursor: pointer;    
+    height: 100px;
+    width: 100px;
+    background-position: center;
+    background-size: cover;
+    border: none;
+}
+
+.confirmButton {
+    display: flex;
+    margin-top: 50px;
+
+}
+
+
+#currentChoice {
+    font-size: 50px;;
+}
+
+#compChoice {
+    font-size: 50px;
+    margin-bottom: 200px;
+}

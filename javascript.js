@@ -14,83 +14,60 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice(){
-    let endTask = false
-    while (endTask == false){
-    let userInput = prompt("Rock, Paper or Scissors?: ").toLowerCase();
 
-    if (userInput === "rock") {
-        endTask = true
-        return "rock"
+
+
+const rockButton = document.getElementById("Rock");
+const paperButton = document.getElementById("Paper");
+const scissorsButton = document.getElementById("Scissors");
+const confirmButton = document.getElementById("confirmButton")
+
+let playerChoice = ""
+
+rockButton.onclick = () => {
+    playerChoice = "rock";
+    topText.textContent = "Rock";
+};
+
+paperButton.onclick = () => {
+    playerChoice = "paper";
+    topText.textContent = "Paper";
+};
+
+scissorsButton.onclick = () => {
+    playerChoice = "scissors";
+    topText.textContent = "Scissors";
+};
+
+let topText = document.getElementById("choiceText");
+let compChoice = document.getElementById("compChoice");
+
+
+
+
+confirmButton.onclick = playRound;
+
+function playRound() {
+
+    const computerChoice = getComputerChoice()
+
+    if (playerChoice === computerChoice) {
+        topText.textContent = "It's a draw!";
     }
 
-    else if (userInput === "paper") {
-        endTask = true
-        return "paper"
-    }
-
-    else if (userInput === "scissors") {
-        endTask = true
-        return "scissors"
+    else if (
+        (playerChoice === "rock" && computerChoice === "scissors") ||
+        (playerChoice === "paper" && computerChoice === "rock") ||
+        (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+        topText.textContent = "You win!";
     }
 
     else {
-        alert("Please enter a valid option!")
-    }
-    }
-}
-
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) {
-
-    if (humanChoice == computerChoice) {
-        alert("It's a draw!")
+        topText.textContent = "You lose!";
     }
 
+    compChoice.textContent = `Computer's choice was ${computerChoice.toUpperCase()}`;
 
-    else if (humanChoice == "rock" && computerChoice == "scissors") {
-        humanScore++
-        alert("You win!")
-    }
-
-    else if (humanChoice == "rock" && computerChoice == "paper") {
-        computerScore++
-        alert("You lose!")
-    }
-
-    else if (humanChoice == "paper" && computerChoice == "scissors") {
-        computerScore++
-        alert("You lose!")
-    }
-
-    else if (humanChoice == "paper" && computerChoice == "rock") {
-        humanScore++
-        alert("You win!")
-    }
-
-    else if (humanChoice == "scissors" && computerChoice == "paper") {
-        humanScore++
-        alert("You win!")
-    }
-
-    else if (humanChoice == "paper" && computerChoice == "rock") {
-        computerScore++
-        alert("You lose!")
-    }
 
 }
-
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    playRound(getHumanChoice(),getComputerChoice())
-    playRound(getHumanChoice(),getComputerChoice())
-    playRound(getHumanChoice(),getComputerChoice())
-    playRound(getHumanChoice(),getComputerChoice())
-    playRound(getHumanChoice(),getComputerChoice())
-}
-
-playGame()
-
