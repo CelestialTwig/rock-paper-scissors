@@ -19,7 +19,7 @@ html {
 }
 
 #Rock {
-    background:url(/home/celestialtwig/Repos/rock-paper-scissors/rock.png) no-repeat;
+    background:url(rock.png) no-repeat;
     cursor: pointer;    
     height: 100px;
     width: 100px;
@@ -29,7 +29,7 @@ html {
 }
 
 #Paper {
-    background:url(/home/celestialtwig/Repos/rock-paper-scissors/paper.png) no-repeat;
+    background:url(paper.png) no-repeat;
     cursor: pointer;    
     height: 100px;
     width: 100px;
@@ -39,7 +39,7 @@ html {
 }
 
 #Scissors {
-    background:url(/home/celestialtwig/Repos/rock-paper-scissors/hand-scissors.png) no-repeat;
+    background:url(hand-scissors.png) no-repeat;
     cursor: pointer;    
     height: 100px;
     width: 100px;
